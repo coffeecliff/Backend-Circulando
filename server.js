@@ -11,7 +11,11 @@ const app = express();
  
 app.use(express.json());
  
-app.use(cors());
+app.use(cors({                            
+  origin: 'https://frontend-portal-turismo.vercel.app/', // utilizar o link da vercel de vocês        
+  methods: ['GET','POST','PUT','DELETE'],
+  credentials: true
+}));
 
 app.get('/', (_req, res)=> res.send('API funcionando'));
  
